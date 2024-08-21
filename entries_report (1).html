@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório de Entradas</title>
+</head>
+<body>
+    <h1>Relatório de Entradas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in entries %}
+                <tr>
+                    <td>{{ entry.product.name }}</td>
+                    <td>{{ entry.quantity }}</td>
+                    <td>{{ entry.date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('products.list_products') }}">Voltar para Produtos</a>
+</body>
+</html>
